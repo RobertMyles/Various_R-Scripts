@@ -12,7 +12,8 @@ In this repo are some R scripts and datasets that may be helpful. To run the scr
 
 <img src = 'http://i.imgur.com/NZu0k9w.png'>
 
- - `ideal_point_example.R`. This script shows a simple run-through of the functions above, using the senate_example data in the data folder.  
+ - `ideal_point_example.R`. This script shows a simple run-through of the functions above, using the senate_example data in the data folder. It looks like this:
+ <img src = 'http://i.imgur.com/JVXhXyj.png?1'>
 
  - `faster_for_loops.R`. People complain that for loops are slow in R. Firstly, R has many vectorized functions that do what you're probably trying to do much faster than you think, use those. If you need a for loop, and you know already the size of the desired resulting object, you can make the process faster by pre-allocating memory size (not a new trick, many have noted this before.)
 
