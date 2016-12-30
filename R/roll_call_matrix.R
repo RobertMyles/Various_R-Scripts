@@ -19,12 +19,6 @@
 # (likewise as column names for the non-Stan version).
 # the pscl package will be installed if the pscl option is marked TRUE.
 
-load("/Users/robert/Replication-files_Formal-Comparisons-of-Legislative-Institutions/data/votes.Rda")
-votes <- votes %>% 
-  rename(Legis_ID = ID, Vote = Voto, Vote_ID = PROJ.ANO) %>% 
-  filter(date >= "1995-01-01", date <= "1999-01-01") %>% 
-  select(Legis_ID, Vote, Vote_ID)
-  
 
 rollcallmatrix <- function(x, pscl = FALSE, Stan = FALSE){
   
