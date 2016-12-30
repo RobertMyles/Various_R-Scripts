@@ -27,8 +27,9 @@
 # the rollcall matrix/object/vector, and a dataframe of legislator 
 # characteristics. If you have a column of legislator names and wish to use 
 #this instead of IDs (for plotting purposes etc), simply name this column 
-# "Legis_ID".
+# "Legis_ID". You will need the tidyverse package to run this.
 
+library(tidyverse)
 
 rollcallmatrix <- function(x, pscl = FALSE, Stan = FALSE, 
                            Legis = FALSE, names = FALSE){
@@ -62,60 +63,57 @@ rollcallmatrix <- function(x, pscl = FALSE, Stan = FALSE,
   dimnames(rollCallMatrix) <- list(unique(nameID), unique(voteId))
   
   
-  
+  Leg <- data_frame(Legislator = unique(nameID),
+                    Party = x$party[match(unique(nameID),
+                                          x$Legis_ID)],
+                    State = x$state[match(unique(nameID),
+                                          x$Legis_ID)],
+                    GovCoalition = x$gov_coalition[match(unique(nameID),
+                                                         x$Legis_ID)])
   
   if(Legis == TRUE & pscl == FALSE & Stan == FALSE){
     
-    Legis_data <- data_frame(Legislator = unique(nameID),
-                             Party = x$party[match(unique(nameID),
-                                                   x$Legis_ID)],
-                             State = x$state[match(unique(nameID),
-                                                   x$Legis_ID)])
+    Legis_data <- Leg
     message("Returning rollcall matrix and legislator characteristics")
-    list_m <- list(rollCallMatrix, Legis_data)
+    list_m <- list(rollCallMatrix = rollCallMatrix, 
+                   Legis_data = Legis_data)
     return(list_m)
     
   } else if(Legis == TRUE & pscl == TRUE){
     
     rollcallObj_1 <- rollcall(rollCallMatrix)
-    Legis_data <- data_frame(Legislator = unique(nameID),
-                             Party = x$party[match(unique(nameID),
-                                                   x$Legis_ID)],
-                             State = x$state[match(unique(nameID),
-                                                   x$Legis_ID)])
-    list_rc_pscl <- list(rollcallObj_1, Legis_data)
+    Legis_data <- Leg
+    list_rc_pscl <- list(rollCallObject = rollcallObj_1, 
+                         Legis_data = Legis_data)
     message("Returning list of rollcall object and legislator\ncharacteristics for pscl")
     return(list_rc_pscl)
   } else if(Legis == TRUE & Stan == TRUE){
     
     miss <- which(is.na(rollCallMatrix))
     StanObject <- rollCallMatrix[-miss]
-    Legis_data <- data_frame(Legislator = unique(nameID),
-                             Party = x$party[match(unique(nameID),
-                                                   x$Legis_ID)],
-                             State = x$state[match(unique(nameID),
-                                                   x$Legis_ID)])
-    list_rc_stan <- list(StanObject, Legis_data)
+    Legis_data <- Leg
+    list_rc_stan <- list(StanObject = StanObject, 
+                         Legis_data = Legis_data)
     message("Returning list of rollcall vector and legislator \ncharacteristics for Stan")
     return(list_rc_stan)
     
   } else if(pscl == FALSE & Stan == FALSE & Legis == FALSE){
     
     message("Returning rollcall matrix")
-    return(rollCallMatrix)
+    return(rollCallMatrix = rollCallMatrix)
     
   } else if(pscl == TRUE & Stan == FALSE){
     
     message("Returning rollcall object")
     rollcallObj_1 <- rollcall(rollCallMatrix)
-    return(rollcallObj_1)
+    return(rollcallObject = rollcallObj_1)
     
   } else if(pscl == FALSE & Stan == TRUE){
     
     miss <- which(is.na(rollCallMatrix))
     StanObject <- rollCallMatrix[-miss]
     message("Returning rollcall object for Stan")
-    return(StanObject)
+    return(StanObject = StanObject)
     
   } 
 }
