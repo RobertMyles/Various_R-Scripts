@@ -10,7 +10,7 @@ In this repo are some R scripts and datasets that may be helpful. To run the scr
 
 3. - `ideal_point_plots.R`. This script contains a function that takes an MCMC summary object (from the coda package function `summary()`) and creates a ggplot ideal point graph from it, using either no colours, or colours determined by party or coalition membership. Since plots can be tricky things to get right to *your* exact taste, I recommend tweaking the function to get exactly what you want.  The default (using government coalition membership to colour) looks like this:
 
-<img scr = 'http://i.imgur.com/NZu0k9w.png'>
+<img src = 'http://i.imgur.com/NZu0k9w.png'>
 
 4. - `faster_for_loops.R`. People complain that for loops are slow in R. Firstly, R has many vectorized functions that do what you're probably trying to do much faster than you think, use those. If you need a for loop, and you know already the size of the desired resulting object, you can make the process faster by pre-allocating memory size (not a new trick, many have noted this before.)
 
