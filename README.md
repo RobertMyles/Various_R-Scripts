@@ -4,7 +4,9 @@ In this repo are some R scripts and datasets that may be helpful. To run the scr
 
 ## List of scripts:  
 
- - `color_table_tidyverse.R`. This is a tidyverse version of a handy color table (from [this R script](https://github.com/hdugan/rColorTable/blob/master/rColorTable.R)). I thought this was a useful little script, and a cool way to show what you can do in R, so I made a tidyverse version. The colors that have changing levels of hue go from left to right in terms of darkness. First comes the base colour, and then versions 1 to 4, with 4 being the darkest (the base can often be darker than 1 and 2). So if you want to use the darkest level of 'wheat' in an R plot, use 'wheat4'. A pdf is created from the script, you can see it in the data folder.  
+ - `color_table_tidyverse.R`. This is a tidyverse version of a handy color table (from [this R script](https://github.com/hdugan/rColorTable/blob/master/rColorTable.R)). I thought this was a useful little script, and a cool way to show what you can do in R, so I made a tidyverse version. The colors that have changing levels of hue go from left to right in terms of darkness. First comes the base colour, and then versions 1 to 4, with 4 being the darkest (the base can often be darker than 1 and 2). So if you want to use the darkest level of 'wheat' in an R plot, use 'wheat4'. A pdf is created from the script, you can see it in the data folder. It looks like this:  
+ 
+ <img src = 'http://i.imgur.com/JVXhXyj.png?1'>
 
  - `roll_call_matrix.R`. This function takes vote data (in a certain format) as input and returns a matrix which can be used with `MCMCpack`, `JAGS`, or `BUGS` for ideal-point analyses. The function can also return a rollcall object, for use with the `pscl` and `wnominate` packages, or a vector (where `NA` have been deleted) for use with Stan. It can be used with the data file `senate_example.csv` in the data folder.    
 
@@ -12,8 +14,7 @@ In this repo are some R scripts and datasets that may be helpful. To run the scr
 
 <img src = 'http://i.imgur.com/NZu0k9w.png'>
 
- - `ideal_point_example.R`. This script shows a simple run-through of the functions above, using the senate_example data in the data folder. It looks like this:
- <img src = 'http://i.imgur.com/JVXhXyj.png?1'>
+ - `ideal_point_example.R`. This script shows a simple run-through of the functions above, using the senate_example data in the data folder.
 
  - `faster_for_loops.R`. People complain that for loops are slow in R. Firstly, R has many vectorized functions that do what you're probably trying to do much faster than you think, use those. If you need a for loop, and you know already the size of the desired resulting object, you can make the process faster by pre-allocating memory size (not a new trick, many have noted this before.)
 
