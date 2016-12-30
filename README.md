@@ -12,14 +12,16 @@ In this repo are some R scripts and datasets that may be helpful. To run the scr
 
 <img src = 'http://i.imgur.com/NZu0k9w.png'>
 
-4. - `faster_for_loops.R`. People complain that for loops are slow in R. Firstly, R has many vectorized functions that do what you're probably trying to do much faster than you think, use those. If you need a for loop, and you know already the size of the desired resulting object, you can make the process faster by pre-allocating memory size (not a new trick, many have noted this before.)
+4. - `ideal_point_example.R`. This script shows a simple run-through of the functions above, using the senate_example data in the data folder.  
 
-5. - `Import&Bind_Multiple_DF.R`. This function reads the files of a certain file type (in the example .csv), imports them into R and binds them together. I saw a slightly different version of this a few years ago, but I can't remember where, otherwise I'd cite the author.  
+5. - `faster_for_loops.R`. People complain that for loops are slow in R. Firstly, R has many vectorized functions that do what you're probably trying to do much faster than you think, use those. If you need a for loop, and you know already the size of the desired resulting object, you can make the process faster by pre-allocating memory size (not a new trick, many have noted this before.)
 
-6. - `stacked_percentage_barchart.R`. Make a stacked bar chart showing percentages in different categories. Useful for showing how respondents vary over different categories. The percentages are shown inside the bars, with their position determined by the relative percentages in the category. It looks like this:
+6. - `Import&Bind_Multiple_DF.R`. This function reads the files of a certain file type (in the example .csv), imports them into R and binds them together. I saw a slightly different version of this a few years ago, but I can't remember where, otherwise I'd cite the author.  
+
+7. - `stacked_percentage_barchart.R`. Make a stacked bar chart showing percentages in different categories. Useful for showing how respondents vary over different categories. The percentages are shown inside the bars, with their position determined by the relative percentages in the category. It looks like this:
 <img src = "http://i.imgur.com/T55W6vc.png">
 
-7. - `538_baltimore_plot.R`. This script replicates the figure from the fivethirtyeight article on black men in Baltimore, Maryland (available [here](http://fivethirtyeight.com/datalab/how-baltimores-young-black-men-are-boxed-in/)). It is not the same because the data used are different, I was unable to find the exact data from the source fivethirtyeight cited. The general idea is to show how you can replicate high-quality publication-ready visualizations in R. For another example of doing this type of thing to replicate figures from The Economist, see my blog post [here](http://robertmyles.github.io/re-creating-plots-from-the-economist-in-r.html).
+8. - `538_baltimore_plot.R`. This script replicates the figure from the fivethirtyeight article on black men in Baltimore, Maryland (available [here](http://fivethirtyeight.com/datalab/how-baltimores-young-black-men-are-boxed-in/)). It is not the same because the data used are different, I was unable to find the exact data from the source fivethirtyeight cited. The general idea is to show how you can replicate high-quality publication-ready visualizations in R. For another example of doing this type of thing to replicate figures from The Economist, see my blog post [here](http://robertmyles.github.io/re-creating-plots-from-the-economist-in-r.html).
 
 
 ## Data:
