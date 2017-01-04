@@ -1,11 +1,11 @@
-# various
+# Various R Scripts
 
 In this repo are some R scripts and datasets that may be helpful. To run the scripts in R, you will need to set your working directory accordingly (to a downloaded version of this repo if you do that) or put the data somewhere you can find it easily.  
 
 ## List of scripts:  
 
  - `color_table_tidyverse.R`. This is a tidyverse version of a handy color table (from [this R script](https://github.com/hdugan/rColorTable/blob/master/rColorTable.R)). I thought this was a useful little script, and a cool way to show what you can do in R, so I made a tidyverse version. The colors that have changing levels of hue go from left to right in terms of darkness. First comes the base colour, and then versions 1 to 4, with 4 being the darkest (the base can often be darker than 1 and 2). So if you want to use the darkest level of 'wheat' in an R plot, use 'wheat4'. A pdf is created from the script, you can see it in the data folder. It looks like this:  
- 
+
  <img src = 'http://i.imgur.com/JVXhXyj.png?1'>
 
  - `roll_call_matrix.R`. This function takes vote data (in a certain format) as input and returns a matrix which can be used with `MCMCpack`, `JAGS`, or `BUGS` for ideal-point analyses. The function can also return a rollcall object, for use with the `pscl` and `wnominate` packages, or a vector (where `NA` have been deleted) for use with Stan. It can be used with the data file `senate_example.csv` in the data folder.    
